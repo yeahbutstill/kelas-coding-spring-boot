@@ -1,13 +1,19 @@
 package com.yeahbutstill.demorestapi.services.impl;
 
 import com.yeahbutstill.demorestapi.services.SortAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BinarySearchImpl {
 
+    @Autowired
     private SortAlgorithm sortAlgorithm;
 
     public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
+
         this.sortAlgorithm = sortAlgorithm;
+
     }
 
     public int binarySearch(int[] numbers, int numberToSearchFor) {
@@ -16,7 +22,7 @@ public class BinarySearchImpl {
         System.out.println(sortAlgorithm);
 
         // Return the result
-        return 3;
+        return 10;
 
     }
 

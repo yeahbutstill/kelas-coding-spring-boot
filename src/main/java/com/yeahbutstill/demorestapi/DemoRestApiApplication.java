@@ -1,27 +1,29 @@
 package com.yeahbutstill.demorestapi;
 
 import com.yeahbutstill.demorestapi.services.impl.BinarySearchImpl;
-import com.yeahbutstill.demorestapi.services.impl.BubbleSortAlgorithm;
-import com.yeahbutstill.demorestapi.services.impl.QuickSortAlgorithm;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DemoRestApiApplication {
 
-	public static void main(String[] args) {
+    // What are the beans? @Component
+    // What are the dependencies of a bean? @Autowired
+    // What to search for beans? => No need
 
-		SpringApplication.run(DemoRestApiApplication.class, args);
+    public static void main(String[] args) {
 
-		BinarySearchImpl binarySearch1 = new BinarySearchImpl(new BubbleSortAlgorithm());
-		BinarySearchImpl binarySearch2 = new BinarySearchImpl(new QuickSortAlgorithm());
+//		BinarySearchImpl binarySearch1 = new BinarySearchImpl(new BubbleSortAlgorithm());
+//		BinarySearchImpl binarySearch2 = new BinarySearchImpl(new QuickSortAlgorithm());
 
-		int result1 = binarySearch1.binarySearch(new int[]{12,4,6}, 3);
-		int result2 = binarySearch2.binarySearch(new int[]{12,4,6}, 3);
+        // Application Context
+        ApplicationContext applicationContext = SpringApplication.run(DemoRestApiApplication.class, args);
+        BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+        int result1 = binarySearch1.binarySearch(new int[]{12, 4, 6, 8, 1, 2, 13, 14, 15, 16}, 10);
 
-		System.out.println(result1);
-		System.out.println(result2);
+        System.out.println(result1);
 
-	}
+    }
 
 }
