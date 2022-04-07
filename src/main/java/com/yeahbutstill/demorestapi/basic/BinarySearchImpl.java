@@ -1,8 +1,6 @@
-package com.yeahbutstill.demorestapi.services.impl;
+package com.yeahbutstill.demorestapi.basic;
 
-import com.yeahbutstill.demorestapi.services.SortAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;

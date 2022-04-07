@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi.services;
+package com.yeahbutstill.demorestapi.basic;
 
 public interface SortAlgorithm {
 

@@ -1,12 +1,12 @@
 package com.yeahbutstill.demorestapi;
 
-import com.yeahbutstill.demorestapi.services.impl.BinarySearchImpl;
+import com.yeahbutstill.demorestapi.basic.BinarySearchImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class DemoRestApiApplication {
+public class DemoRestApiBasicApplication {
 
     // What are the beans? @Component
     // What are the dependencies of a bean? @Autowired
@@ -18,7 +18,7 @@ public class DemoRestApiApplication {
 //		BinarySearchImpl binarySearch1 = new BinarySearchImpl(new QuickSortAlgorithm());
 
         // Application Context
-        ApplicationContext applicationContext = SpringApplication.run(DemoRestApiApplication.class, args);
+        ApplicationContext applicationContext = SpringApplication.run(DemoRestApiBasicApplication.class, args);
         BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
         BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
 

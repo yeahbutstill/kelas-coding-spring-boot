@@ -1,6 +1,5 @@
-package com.yeahbutstill.demorestapi.services.impl;
+package com.yeahbutstill.demorestapi.basic;
 
-import com.yeahbutstill.demorestapi.services.SortAlgorithm;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
