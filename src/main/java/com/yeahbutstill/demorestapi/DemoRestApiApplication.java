@@ -14,15 +14,20 @@ public class DemoRestApiApplication {
 
     public static void main(String[] args) {
 
-//		BinarySearchImpl binarySearch1 = new BinarySearchImpl(new BubbleSortAlgorithm());
-//		BinarySearchImpl binarySearch2 = new BinarySearchImpl(new QuickSortAlgorithm());
+//		BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm());
+//		BinarySearchImpl binarySearch1 = new BinarySearchImpl(new QuickSortAlgorithm());
 
         // Application Context
         ApplicationContext applicationContext = SpringApplication.run(DemoRestApiApplication.class, args);
+        BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
         BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
-        int result1 = binarySearch1.binarySearch(new int[]{12, 4, 6, 8, 1, 2, 13, 14, 15, 16}, 10);
 
-        System.out.println(result1);
+        System.out.println(binarySearch);
+        System.out.println(binarySearch1);
+
+        int result = binarySearch.binarySearch(new int[]{12, 4, 6, 8, 1, 2, 13, 14, 15, 16}, 10);
+
+        System.out.println(result);
 
     }
 
