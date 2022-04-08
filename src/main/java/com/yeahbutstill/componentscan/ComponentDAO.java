@@ -1,6 +1,5 @@
 package com.yeahbutstill.componentscan;
 
-import com.yeahbutstill.demorestapi.scope.JdbcConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
