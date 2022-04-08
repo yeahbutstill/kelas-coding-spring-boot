@@ -9,11 +9,11 @@
 
     <context:component-scan base-package="com.yeahbutstill"/>
 
-    <bean id="xmlJdbcConnection" class="com.yeahbutstill.springin5step.xml.XMLJdbcConnection">
+    <bean id="xmlJdbcConnection" class="com.yeahbutstill.junit.springin5step.xml.XMLJdbcConnection">
         <!-- collaborators and configuration for this bean go here -->
     </bean>
 
-    <bean id="xmlPersonDAO" class="com.yeahbutstill.springin5step.xml.XMLPersonDAO">
+    <bean id="xmlPersonDAO" class="com.yeahbutstill.junit.springin5step.xml.XMLPersonDAO">
         <!-- collaborators and configuration for this bean go here -->
         <property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
     </bean>
