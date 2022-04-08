@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.yeahbutstill"/>
 
     <bean id="xmlJdbcConnection" class="com.yeahbutstill.demorestapi.xml.XMLJdbcConnection">
         <!-- collaborators and configuration for this bean go here -->
@@ -10,7 +15,7 @@
 
     <bean id="xmlPersonDAO" class="com.yeahbutstill.demorestapi.xml.XMLPersonDAO">
         <!-- collaborators and configuration for this bean go here -->
-        <property name="xmlJdbcConnection" ref="xmlJdbcConnection"></property>
+        <property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
     </bean>
 
     <!-- more bean definitions go here -->

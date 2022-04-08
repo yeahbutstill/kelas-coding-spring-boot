@@ -1,19 +1,18 @@
 package com.yeahbutstill.demorestapi;
 
-import com.yeahbutstill.demorestapi.basic.BinarySearchImpl;
 import com.yeahbutstill.demorestapi.xml.XMLPersonDAO;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan
+
 public class DemoRestApiXMLContextApplication {
 
     // What are the beans? @Component
     // What are the dependencies of a bean? @Autowired
     // What to search for beans? => No need
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoRestApiXMLContextApplication.class);
 
     public static void main(String[] args) {
 
@@ -23,9 +22,10 @@ public class DemoRestApiXMLContextApplication {
         // Application Context
         try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml")) {
 
+            LOGGER.info("Beans Loaded -> {}", (Object) applicationContext.getBeanDefinitionNames());
+
             XMLPersonDAO xmlPersonDAO = applicationContext.getBean(XMLPersonDAO.class);
-            System.out.println(xmlPersonDAO);
-            System.out.println(xmlPersonDAO.getXmlJdbcConnection());
+            LOGGER.info("{} {}", xmlPersonDAO, xmlPersonDAO.getXmlJdbcConnection());
 
         }
 
