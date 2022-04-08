@@ -1,1 +1,1 @@
-# kelas-coding-spring-boot
+# spring-master-class-the-modernway
