@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi.basic;
+package com.yeahbutstill.springin5step.basic;
 
 public interface SortAlgorithm {
 

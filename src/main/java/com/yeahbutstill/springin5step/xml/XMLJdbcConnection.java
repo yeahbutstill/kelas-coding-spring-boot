@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi.xml;
+package com.yeahbutstill.springin5step.xml;
 
 public class XMLJdbcConnection {
 

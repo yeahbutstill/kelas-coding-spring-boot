@@ -1,6 +1,6 @@
-package com.yeahbutstill.demorestapi;
+package com.yeahbutstill.springin5step;
 
-import com.yeahbutstill.demorestapi.cdi.SomeCdiBusiness;
+import com.yeahbutstill.springin5step.cdi.SomeCdiBusiness;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

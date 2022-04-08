@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi.scope;
+package com.yeahbutstill.springin5step.scope;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;

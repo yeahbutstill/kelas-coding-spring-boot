@@ -1,6 +1,6 @@
-package com.yeahbutstill.demorestapi;
+package com.yeahbutstill.springin5step;
 
-import com.yeahbutstill.demorestapi.basic.BinarySearchImpl;
+import com.yeahbutstill.springin5step.basic.BinarySearchImpl;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi.basic;
+package com.yeahbutstill.springin5step.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

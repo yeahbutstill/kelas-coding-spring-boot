@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi;
+package com.yeahbutstill.springin5step;
 
 import com.yeahbutstill.componentscan.ComponentDAO;
 import org.slf4j.Logger;

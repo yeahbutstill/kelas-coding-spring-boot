@@ -1,4 +1,4 @@
-package com.yeahbutstill.demorestapi.basic;
+package com.yeahbutstill.springin5step.basic;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

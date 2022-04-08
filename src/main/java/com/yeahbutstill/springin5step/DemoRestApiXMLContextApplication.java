@@ -1,6 +1,6 @@
-package com.yeahbutstill.demorestapi;
+package com.yeahbutstill.springin5step;
 
-import com.yeahbutstill.demorestapi.xml.XMLPersonDAO;
+import com.yeahbutstill.springin5step.xml.XMLPersonDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
