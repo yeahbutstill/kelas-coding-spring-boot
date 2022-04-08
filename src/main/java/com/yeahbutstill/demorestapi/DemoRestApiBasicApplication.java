@@ -1,11 +1,12 @@
 package com.yeahbutstill.demorestapi;
 
 import com.yeahbutstill.demorestapi.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class DemoRestApiBasicApplication {
 
     // What are the beans? @Component
@@ -18,16 +19,18 @@ public class DemoRestApiBasicApplication {
 //		BinarySearchImpl binarySearch1 = new BinarySearchImpl(new QuickSortAlgorithm());
 
         // Application Context
-        ApplicationContext applicationContext = SpringApplication.run(DemoRestApiBasicApplication.class, args);
-        BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
-        BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+        try (AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(DemoRestApiBasicApplication.class)) {
 
-        System.out.println(binarySearch);
-        System.out.println(binarySearch1);
+            BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+            BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
 
-        int result = binarySearch.binarySearch(new int[]{12, 4, 6, 8, 1, 2, 13, 14, 15, 16}, 10);
+            System.out.println(binarySearch);
+            System.out.println(binarySearch1);
 
-        System.out.println(result);
+            int result = binarySearch.binarySearch(new int[]{12, 4, 6, 8, 1, 2, 13, 14, 15, 16}, 10);
+            System.out.println(result);
+
+        }
 
     }
 
