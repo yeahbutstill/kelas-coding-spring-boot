@@ -6,6 +6,7 @@ import org.junit.Test;
 public class MyMathTest {
 
     MyMath myMath = new MyMath();
+
     // MyMath.sum
     // 1,2,3 => 6
     @Test
