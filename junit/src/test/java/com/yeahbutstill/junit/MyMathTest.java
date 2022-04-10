@@ -6,16 +6,6 @@ public class MyMathTest {
 
     MyMath myMath = new MyMath();
 
-    @Before
-    public void testBefore() {
-        System.out.println("Before");
-    }
-
-    @After
-    public void testAfter() {
-        System.out.println("After");
-    }
-
     @BeforeClass
     public static void testBeforeClass() {
         System.out.println("Before Class");
@@ -24,6 +14,16 @@ public class MyMathTest {
     @AfterClass
     public static void testAfterClass() {
         System.out.println("After Class");
+    }
+
+    @Before
+    public void testBefore() {
+        System.out.println("Before");
+    }
+
+    @After
+    public void testAfter() {
+        System.out.println("After");
     }
 
     // MyMath.sum
