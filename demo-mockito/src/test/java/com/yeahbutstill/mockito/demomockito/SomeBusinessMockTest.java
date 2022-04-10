@@ -11,7 +11,7 @@ class SomeBusinessMockTest {
         DataService dataServiceMock = Mockito.mock(DataService.class);
 
 //        dataServiceMock.retrieveAllData() => new int[]{24,15,3}
-        Mockito.when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{24,15,3});
+        Mockito.when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{24, 15, 3});
 
         SomeBusinessImpl someBusiness = new SomeBusinessImpl(dataServiceMock);
         int theGreatestFromAllData = someBusiness.findTheGreatestFromAllData();

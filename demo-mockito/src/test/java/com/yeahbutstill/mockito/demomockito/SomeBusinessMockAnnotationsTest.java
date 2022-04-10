@@ -19,7 +19,7 @@ class SomeBusinessMockAnnotationsTest {
 
     @Test
     void testFindTheGreatestFromAllData24() {
-        Mockito.when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{24,15,3});
+        Mockito.when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{24, 15, 3});
         int theGreatestFromAllData = someBusiness.findTheGreatestFromAllData();
         Assertions.assertEquals(24, theGreatestFromAllData);
     }
