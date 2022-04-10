@@ -3,7 +3,7 @@ package com.yeahbutstill.mockito.demomockito;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SomeBusinessTest {
+class SomeBusinessStubsTest {
 
     @Test
     void testFindTheGreatestFromAllData24() {
