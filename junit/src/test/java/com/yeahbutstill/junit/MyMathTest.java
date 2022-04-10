@@ -1,11 +1,30 @@
 package com.yeahbutstill.junit;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 
 public class MyMathTest {
 
     MyMath myMath = new MyMath();
+
+    @Before
+    public void testBefore() {
+        System.out.println("Before");
+    }
+
+    @After
+    public void testAfter() {
+        System.out.println("After");
+    }
+
+    @BeforeClass
+    public static void testBeforeClass() {
+        System.out.println("Before Class");
+    }
+
+    @AfterClass
+    public static void testAfterClass() {
+        System.out.println("After Class");
+    }
 
     // MyMath.sum
     // 1,2,3 => 6
@@ -14,11 +33,13 @@ public class MyMathTest {
         // Absence of failure is success
         // Check that the result is 26
         // check result == 26
+        System.out.println("Test1");
         Assert.assertEquals(26, myMath.sum(new int[]{1, 2, 3}));
     }
 
     @Test
     public void testSumWith1Number() {
+        System.out.println("Test2");
         Assert.assertEquals(21, myMath.sum(new int[]{1}));
     }
 }
