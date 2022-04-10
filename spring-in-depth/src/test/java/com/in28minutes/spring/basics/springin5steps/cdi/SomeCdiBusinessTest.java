@@ -22,6 +22,7 @@ public class SomeCdiBusinessTest {
 
     @Test
     public void testBasicScenario() {
+        // when daoMock.getData() method is called return int[]{2,4}
         Mockito.when(daoMock.getData()).thenReturn(new int[]{2, 4});
         assertEquals(4, business.findGreatest());
     }
