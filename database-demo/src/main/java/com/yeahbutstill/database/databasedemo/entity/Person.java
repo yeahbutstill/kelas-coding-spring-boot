@@ -1,6 +1,7 @@
 package com.yeahbutstill.database.databasedemo.entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Person {
 
@@ -8,6 +9,9 @@ public class Person {
     private String name;
     private String location;
     private Date birthDate;
+
+    public Person() {
+    }
 
     public Person(Integer id, String name, String location, Date birthDate) {
         this.id = id;
@@ -48,4 +52,27 @@ public class Person {
         this.birthDate = birthDate;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(id, person.id) && Objects.equals(name, person.name) && Objects.equals(location, person.location) && Objects.equals(birthDate, person.birthDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, location, birthDate);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
+    }
+    
 }
