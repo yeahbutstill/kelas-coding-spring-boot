@@ -13,12 +13,16 @@ public class MethodExecutionCalculationAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
+	// membiarkan metode untuk menlanjutkan dan kemudian menemukan waktu yang diperlukan
+	@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
 	public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
+		// startTime = x
 		long startTime = System.currentTimeMillis();
 
+		// allow execution of method
 		Object returnProceed = joinPoint.proceed();
 
+		// end time = y
 		long timeTaken = System.currentTimeMillis() - startTime;
 		logger.info("Time Taken by {} is {}", joinPoint, timeTaken);
 

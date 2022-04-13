@@ -13,9 +13,11 @@ public class CommonJoinPointConfig {
 	@Pointcut("dataLayerExecution() && businessLayerExecution()")
 	public void allLayerExecution(){}
 	
+	// Semua pemanggilan metode pada bean yang mengandung dao dalam nama dicocokkan dengan pointcut
 	@Pointcut("bean(*dao*)")
 	public void beanContainingDao(){}
-	
+
+	// Hati-hati dengan tanda kurung tutup saat menentukan pointcuts
 	@Pointcut("within(com.in28minutes.spring.aop.springaop.data..*)")
 	public void dataLayerExecutionWithWithin(){}
 
