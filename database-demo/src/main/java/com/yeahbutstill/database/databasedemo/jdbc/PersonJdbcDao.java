@@ -31,4 +31,9 @@ public class PersonJdbcDao {
                 new BeanPropertyRowMapper(Person.class));
     }
 
+    public int deleteById(Integer id) {
+        // Anda dapat menggunakan ketika anda benar-benar mencari object
+        return jdbcTemplate.update("delete from person where id=?", new Object[]{id});
+    }
+
 }
