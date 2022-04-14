@@ -24,5 +24,11 @@ public class PersonJdbcDao {
         // Sekarang saya perlu memetakan data apa pun yang datang dari sini ke bean person saat kueri dieksekusi
         return jdbcTemplate.query("select * from person", new BeanPropertyRowMapper(Person.class));
     }
-    
+
+    public Person findById(Integer id) {
+        // Anda dapat menggunakan ketika anda benar-benar mencari object
+        return (Person) jdbcTemplate.queryForObject("select * from person where id=?", new Object[]{id},
+                new BeanPropertyRowMapper(Person.class));
+    }
+
 }
