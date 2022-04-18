@@ -15,9 +15,9 @@ import java.util.Date;
  * Jadi ketika konteks aplikasi ini meluncurkan kode di CommandLineRunner dijalankan.
  */
 
-@SpringBootApplication
+//@SpringBootApplication
 // ini akan diluncurkan ketika saya mengimplementasikan CommandLineRunner
-public class DatabaseDemoApplication implements CommandLineRunner {
+public class SpringJdbcDemoApplication implements CommandLineRunner {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -25,7 +25,7 @@ public class DatabaseDemoApplication implements CommandLineRunner {
 	PersonJdbcDao personJdbcDao;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DatabaseDemoApplication.class, args);
+		SpringApplication.run(SpringJdbcDemoApplication.class, args);
 	}
 
 	// dan kemudian kode ini yang kami tulis dalam methode spesifik yang akan diluncurkan
