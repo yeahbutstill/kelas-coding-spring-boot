@@ -16,7 +16,7 @@ import java.util.Date;
  * Jadi ketika konteks aplikasi ini meluncurkan kode di CommandLineRunner dijalankan.
  */
 
-@SpringBootApplication
+//@SpringBootApplication
 // ini akan diluncurkan ketika saya mengimplementasikan CommandLineRunner
 public class JpaDemoApplication implements CommandLineRunner {
 
