@@ -1,12 +1,15 @@
 package com.yeahbutstill.database.databasedemo.repositorys;
 
 import com.yeahbutstill.database.databasedemo.entity.Person;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import java.util.List;
 
 // Repository ini untuk menandatak bahwa ini adalah repository
 @Repository
@@ -48,5 +51,12 @@ public class PersonJpaRepository {
     public void deleteById(int id) {
         Person person = findById(id);
         entityManager.remove(person);
+    }
+
+    // HQL
+    public List<Person> findAll() {
+        // JPQL jadi query bernama ini akan mengembalikan Person.class
+        TypedQuery<Person> namedQuery = entityManager.createNamedQuery("find_all_persons", Person.class);
+        return namedQuery.getResultList();
     }
 }

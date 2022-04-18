@@ -50,7 +50,7 @@ public class JpaDemoApplication implements CommandLineRunner {
 
 		repository.deleteById(1);
 
-//		logger.info("All Users -> {}", personJdbcDao.findAll());
+		logger.info("All Users -> {}", repository.findAll());
 
 	}
 }

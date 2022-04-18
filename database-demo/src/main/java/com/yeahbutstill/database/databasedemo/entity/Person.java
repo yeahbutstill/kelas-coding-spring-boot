@@ -1,13 +1,11 @@
 package com.yeahbutstill.database.databasedemo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@NamedQuery(name = "find_all_persons", query = "select p from Person p")
 public class Person {
 
     // primary key
