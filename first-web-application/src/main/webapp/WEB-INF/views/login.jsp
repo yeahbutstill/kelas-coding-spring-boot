@@ -1,4 +1,5 @@
-<%--
+<%-- JSP JUST VIEW NOT THE LOGIC --%>
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: yeahbutstill
   Date: 19/04/22
@@ -11,13 +12,17 @@
     <meta http-equiv="Content-Type", content="text/html; charset=UTF-8">
     <title>Yeahbutstill Yoo!!! From JSP</title>
 </head>
+<body>
+<h2>My First JSP</h2>
 <%-- Anda dapat menulis banyak kode Java di JSP bukan hal yang benar-benar direkomendasikan
 tetapi ada baiknya anda tahu itu mungkin --%>
 <%
-    System.out.println();
+    System.out.println(request.getParameter("name"));
+    System.out.println(request.getParameter("age"));
+    System.out.println("--------------------------");
+    Date date = new Date();
 %>
-<body>
-My First JSP
+<div>Current date is <%=date%></div>
 <p>
 <%--JSP EL (expression language)--%>
     my name is ${name} and my age ${age} old
