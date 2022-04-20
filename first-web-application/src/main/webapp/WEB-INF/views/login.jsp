@@ -14,8 +14,8 @@
 </head>
 <body>
 <h2>My First JSP</h2>
-<h3>My name is ${name}</h3>
-<h3>My password is ${password}</h3>
+<%--<h3>My name is ${name}</h3>--%>
+<%--<h3>My password is ${password}</h3>--%>
 <%-- Anda dapat menulis banyak kode Java di JSP bukan hal yang benar-benar direkomendasikan
 tetapi ada baiknya anda tahu itu mungkin --%>
 <%
@@ -29,5 +29,9 @@ tetapi ada baiknya anda tahu itu mungkin --%>
 <%--JSP EL (expression language)--%>
 <%--    my name is ${name} and my age ${age} old--%>
 </p>
+<%--dalam form anda harus menentukan tindakan siapa yang akan menangani formulir ini dan permintaan formulir yang ingin--%>
+<form action="/login.do" method="post">
+    Enter your name <input type="text" name="name"/> <input type="submit" value="Login">
+</form>
 </body>
 </html>
