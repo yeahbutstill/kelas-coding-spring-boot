@@ -11,8 +11,7 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
-
-
+    // Request Method
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        // jika anda bisa mendapatkan parameter dari permintaan dengan menggunakan permintaan
@@ -30,6 +29,13 @@ public class LoginServlet extends HttpServlet {
         req.setAttribute("password", req.getParameter("password"));
 
         req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+    }
+
+    // Post Method
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("name", req.getParameter("name"));
+        req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, resp);
     }
 
 }
