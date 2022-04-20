@@ -31,7 +31,10 @@ tetapi ada baiknya anda tahu itu mungkin --%>
 </p>
 <%--dalam form anda harus menentukan tindakan siapa yang akan menangani formulir ini dan permintaan formulir yang ingin--%>
 <form action="/login.do" method="post">
-    Enter your name <input type="text" name="name"/> <input type="submit" value="Login">
+    <p style="color: red">${errorMessage}</p>
+    Name: <input type="text" name="name"/>
+    Password: <input type="password" name="password"/>
+    <input type="submit" value="Login"/>
 </form>
 </body>
 </html>

@@ -11,6 +11,9 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
+    // Validate User
+    private UserValidationService service = new UserValidationService();
+
     // Request Method
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,8 +37,21 @@ public class LoginServlet extends HttpServlet {
     // Post Method
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("name", req.getParameter("name"));
-        req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, resp);
+
+        String name = req.getParameter("name");
+        req.setAttribute("name", name);
+        String password = req.getParameter("password");
+        req.setAttribute("password", password);
+
+        boolean userValid = service.isUserValid(name, password);
+        if (userValid) {
+            req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, resp);
+        } else {
+            req.setAttribute("errorMessage", "Invalid Credentials!");
+            System.out.println("name or password invalid");
+            req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
+        }
+
     }
 
 }
