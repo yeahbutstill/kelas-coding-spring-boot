@@ -7,13 +7,13 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.in28minutes.spring.basics"/>
+    <context:component-scan base-package="com.yeahbutstill.spring.basics"/>
 
     <bean id="xmlJdbcConnection"
-          class="com.in28minutes.spring.basics.springin5steps.xml.XmlJdbcConnection">
+          class="com.yeahbutstill.spring.basics.springin5steps.xml.XmlJdbcConnection">
     </bean>
 
-    <bean id="xmlPersonDAO" class="com.in28minutes.spring.basics.springin5steps.xml.XmlPersonDAO">
+    <bean id="xmlPersonDAO" class="com.yeahbutstill.spring.basics.springin5steps.xml.XmlPersonDAO">
         <property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
     </bean>
 

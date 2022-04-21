@@ -26,7 +26,7 @@ Let's play and learn more about Spring AOP
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.in28minutes.spring.aop</groupId>
+	<groupId>com.yeahbutstill.spring.aop</groupId>
 	<artifactId>spring-aop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -115,7 +115,7 @@ Let's play and learn more about Spring AOP
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/AfterAopAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -133,13 +133,13 @@ public class AfterAopAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@AfterReturning(value = "com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()", 
+	@AfterReturning(value = "com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()", 
 			returning = "result")
 	public void afterReturning(JoinPoint joinPoint, Object result) {
 		logger.info("{} returned with value {}", joinPoint, result);
 	}
 	
-	@After(value = "com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+	@After(value = "com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
 	public void after(JoinPoint joinPoint) {
 		logger.info("after execution of {}", joinPoint);
 	}
@@ -150,28 +150,28 @@ public class AfterAopAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/CommonJoinPointConfig.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.annotation.Pointcut;
 
 public class CommonJoinPointConfig {
 	
-	@Pointcut("execution(* com.in28minutes.spring.aop.springaop.data.*.*(..))")
+	@Pointcut("execution(* com.yeahbutstilll.spring.aop.springaop.data.*.*(..))")
 	public void dataLayerExecution(){}
 	
-	@Pointcut("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
+	@Pointcut("execution(* com.yeahbutstilll.spring.aop.springaop.business.*.*(..))")
 	public void businessLayerExecution(){}
 	
 	@Pointcut("dataLayerExecution() && businessLayerExecution()")
 	public void allLayerExecution(){}
 	
-	@Pointcut("bean(*dao*)")
+	@Pointcut("entity(*dao*)")
 	public void beanContainingDao(){}
 	
-	@Pointcut("within(com.in28minutes.spring.aop.springaop.data..*)")
+	@Pointcut("within(com.yeahbutstilll.spring.aop.springaop.data..*)")
 	public void dataLayerExecutionWithWithin(){}
 
-	@Pointcut("@annotation(com.in28minutes.spring.aop.springaop.aspect.TrackTime)")
+	@Pointcut("@annotation(com.yeahbutstilll.spring.aop.springaop.aspect.TrackTime)")
 	public void trackTimeAnnotation(){}
 
 }
@@ -181,7 +181,7 @@ public class CommonJoinPointConfig {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/MethodExecutionCalculationAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -196,7 +196,7 @@ public class MethodExecutionCalculationAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
+	@Around("com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 
@@ -212,7 +212,7 @@ public class MethodExecutionCalculationAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/TrackTime.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -230,7 +230,7 @@ public @interface TrackTime {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/UserAccessAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -250,7 +250,7 @@ public class UserAccessAspect {
 	//What kind of method calls I would intercept
 	//execution(* PACKAGE.*.*(..))
 	//Weaving & Weaver
-	@Before("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
+	@Before("com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
 	public void before(JoinPoint joinPoint){
 		//Advice
 		logger.info(" Check for user access ");
@@ -263,15 +263,15 @@ public class UserAccessAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/business/Business1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.business;
+package com.yeahbutstill.spring.aop.springaop.business;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.spring.aop.springaop.aspect.TrackTime;
-import com.in28minutes.spring.aop.springaop.data.Dao1;
+import com.yeahbutstill.spring.aop.springaop.aspect.TrackTime;
+import com.yeahbutstill.spring.aop.springaop.data.Dao1;
 
 @Service
 public class Business1 {
@@ -295,12 +295,12 @@ public class Business1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/business/Business2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.business;
+package com.yeahbutstill.spring.aop.springaop.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.spring.aop.springaop.data.Dao2;
+import com.yeahbutstill.spring.aop.springaop.data.Dao2;
 
 @Service
 public class Business2 {
@@ -319,11 +319,11 @@ public class Business2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/data/Dao1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.data;
+package com.yeahbutstill.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
-import com.in28minutes.spring.aop.springaop.aspect.TrackTime;
+import com.yeahbutstill.spring.aop.springaop.aspect.TrackTime;
 
 @Repository
 public class Dao1 {
@@ -340,7 +340,7 @@ public class Dao1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/data/Dao2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.data;
+package com.yeahbutstill.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
@@ -358,7 +358,7 @@ public class Dao2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/SpringAopApplication.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -367,8 +367,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.in28minutes.spring.aop.springaop.business.Business1;
-import com.in28minutes.spring.aop.springaop.business.Business2;
+import com.yeahbutstill.spring.aop.springaop.business.Business1;
+import com.yeahbutstill.spring.aop.springaop.business.Business2;
 
 @SpringBootApplication
 public class SpringAopApplication implements CommandLineRunner{
@@ -403,7 +403,7 @@ public class SpringAopApplication implements CommandLineRunner{
 ### /src/test/java/com/in28minutes/spring/aop/springaop/SpringAopApplicationTests.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -433,7 +433,7 @@ public class SpringAopApplicationTests {
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.in28minutes.spring.aop</groupId>
+	<groupId>com.yeahbutstill.spring.aop</groupId>
 	<artifactId>spring-aop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -522,7 +522,7 @@ public class SpringAopApplicationTests {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/AfterAopAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -540,13 +540,13 @@ public class AfterAopAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@AfterReturning(value = "com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()", 
+	@AfterReturning(value = "com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()", 
 			returning = "result")
 	public void afterReturning(JoinPoint joinPoint, Object result) {
 		logger.info("{} returned with value {}", joinPoint, result);
 	}
 	
-	@After(value = "com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+	@After(value = "com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
 	public void after(JoinPoint joinPoint) {
 		logger.info("after execution of {}", joinPoint);
 	}
@@ -557,28 +557,28 @@ public class AfterAopAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/CommonJoinPointConfig.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.annotation.Pointcut;
 
 public class CommonJoinPointConfig {
 	
-	@Pointcut("execution(* com.in28minutes.spring.aop.springaop.data.*.*(..))")
+	@Pointcut("execution(* com.yeahbutstilll.spring.aop.springaop.data.*.*(..))")
 	public void dataLayerExecution(){}
 	
-	@Pointcut("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
+	@Pointcut("execution(* com.yeahbutstilll.spring.aop.springaop.business.*.*(..))")
 	public void businessLayerExecution(){}
 	
 	@Pointcut("dataLayerExecution() && businessLayerExecution()")
 	public void allLayerExecution(){}
 	
-	@Pointcut("bean(*dao*)")
+	@Pointcut("entity(*dao*)")
 	public void beanContainingDao(){}
 	
-	@Pointcut("within(com.in28minutes.spring.aop.springaop.data..*)")
+	@Pointcut("within(com.yeahbutstilll.spring.aop.springaop.data..*)")
 	public void dataLayerExecutionWithWithin(){}
 
-	@Pointcut("@annotation(com.in28minutes.spring.aop.springaop.aspect.TrackTime)")
+	@Pointcut("@annotation(com.yeahbutstilll.spring.aop.springaop.aspect.TrackTime)")
 	public void trackTimeAnnotation(){}
 
 }
@@ -588,7 +588,7 @@ public class CommonJoinPointConfig {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/MethodExecutionCalculationAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -603,7 +603,7 @@ public class MethodExecutionCalculationAspect {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Around("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
+	@Around("com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 
@@ -619,7 +619,7 @@ public class MethodExecutionCalculationAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/TrackTime.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -637,7 +637,7 @@ public @interface TrackTime {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/UserAccessAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -657,7 +657,7 @@ public class UserAccessAspect {
 	//What kind of method calls I would intercept
 	//execution(* PACKAGE.*.*(..))
 	//Weaving & Weaver
-	@Before("com.in28minutes.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
+	@Before("com.yeahbutstilll.spring.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
 	public void before(JoinPoint joinPoint){
 		//Advice
 		logger.info(" Check for user access ");
@@ -670,15 +670,15 @@ public class UserAccessAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/business/Business1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.business;
+package com.yeahbutstill.spring.aop.springaop.business;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.spring.aop.springaop.aspect.TrackTime;
-import com.in28minutes.spring.aop.springaop.data.Dao1;
+import com.yeahbutstill.spring.aop.springaop.aspect.TrackTime;
+import com.yeahbutstill.spring.aop.springaop.data.Dao1;
 
 @Service
 public class Business1 {
@@ -702,12 +702,12 @@ public class Business1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/business/Business2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.business;
+package com.yeahbutstill.spring.aop.springaop.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.spring.aop.springaop.data.Dao2;
+import com.yeahbutstill.spring.aop.springaop.data.Dao2;
 
 @Service
 public class Business2 {
@@ -726,11 +726,11 @@ public class Business2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/data/Dao1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.data;
+package com.yeahbutstill.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
-import com.in28minutes.spring.aop.springaop.aspect.TrackTime;
+import com.yeahbutstill.spring.aop.springaop.aspect.TrackTime;
 
 @Repository
 public class Dao1 {
@@ -747,7 +747,7 @@ public class Dao1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/data/Dao2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.data;
+package com.yeahbutstill.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
@@ -765,7 +765,7 @@ public class Dao2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/SpringAopApplication.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -774,8 +774,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.in28minutes.spring.aop.springaop.business.Business1;
-import com.in28minutes.spring.aop.springaop.business.Business2;
+import com.yeahbutstill.spring.aop.springaop.business.Business1;
+import com.yeahbutstill.spring.aop.springaop.business.Business2;
 
 @SpringBootApplication
 public class SpringAopApplication implements CommandLineRunner{
@@ -810,7 +810,7 @@ public class SpringAopApplication implements CommandLineRunner{
 ### /src/test/java/com/in28minutes/spring/aop/springaop/SpringAopApplicationTests.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -54,7 +54,7 @@ xmlJdbcConnection, xmlPersonDAO]
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.in28minutes.spring.basics</groupId>
+	<groupId>com.yeahbutstill.spring.basics</groupId>
 	<artifactId>spring-in-5-steps</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -166,7 +166,7 @@ xmlJdbcConnection, xmlPersonDAO]
 ### /src/main/java/com/in28minutes/spring/basics/componentscan/ComponentDAO.java
 
 ```java
-package com.in28minutes.spring.basics.componentscan;
+package com.yeahbutstill.spring.basics.componentscan;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -192,7 +192,7 @@ public class ComponentDAO {
 ### /src/main/java/com/in28minutes/spring/basics/componentscan/ComponentJdbcConnection.java
 
 ```java
-package com.in28minutes.spring.basics.componentscan;
+package com.yeahbutstill.spring.basics.componentscan;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -214,7 +214,7 @@ public class ComponentJdbcConnection {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/basic/BinarySearchImpl.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.basic;
+package com.yeahbutstill.spring.basics.springin5steps.basic;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -225,36 +225,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearchImpl {
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass()); 
 
-	@Autowired
-	@Qualifier("bubble")
-	private SortAlgorithm sortAlgorithm;
-	
-	public int binarySearch(int[] numbers, int numberToSearchFor) {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-		int[] sortedNumbers = sortAlgorithm.sort(numbers);
-		System.out.println(sortAlgorithm);
-		// Search the array
-		return 3;
-	}
-	
-	@PostConstruct
-	public void postConstruct() {
-		logger.info("postConstruct");
-	}
+    @Autowired
+    @Qualifier("bubble")
+    private SortAlgorithm sortAlgorithm;
 
-	@PreDestroy
-	public void preDestroy() {
-		logger.info("preDestroy");
-	}
+    public int binarySearch(int[] numbers, int numberToSearchFor) {
+
+        int[] sortedNumbers = sortAlgorithm.sort(numbers);
+        System.out.println(sortAlgorithm);
+        // Search the array
+        return 3;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        logger.info("postConstruct");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        logger.info("preDestroy");
+    }
 
 }
 ```
@@ -264,19 +263,18 @@ public class BinarySearchImpl {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/basic/BubbleSortAlgorithm.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.basic;
+package com.yeahbutstill.spring.basics.springin5steps.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
 @Qualifier("bubble")
 public class BubbleSortAlgorithm implements SortAlgorithm {
-	public int[] sort(int[] numbers) {
-		// Logic for Bubble Sort
-		return numbers;
-	}
+    public int[] sort(int[] numbers) {
+        // Logic for Bubble Sort
+        return numbers;
+    }
 }
 ```
 
@@ -285,7 +283,7 @@ public class BubbleSortAlgorithm implements SortAlgorithm {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/basic/QuickSortAlgorithm.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.basic;
+package com.yeahbutstill.spring.basics.springin5steps.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -305,7 +303,7 @@ public class QuickSortAlgorithm implements SortAlgorithm {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/basic/SortAlgorithm.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.basic;
+package com.yeahbutstill.spring.basics.springin5steps.basic;
 
 public interface SortAlgorithm {
 	public int[] sort(int[] numbers);
@@ -317,7 +315,7 @@ public interface SortAlgorithm {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/cdi/SomeCdiBusiness.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.cdi;
+package com.yeahbutstill.spring.basics.springin5steps.cdi;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -343,7 +341,7 @@ public class SomeCdiBusiness {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/cdi/SomeCdiDao.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.cdi;
+package com.yeahbutstill.spring.basics.springin5steps.cdi;
 
 import javax.inject.Named;
 
@@ -358,7 +356,7 @@ public class SomeCdiDao {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/properties/SomeExternalService.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.properties;
+package com.yeahbutstill.spring.basics.springin5steps.properties;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -381,7 +379,7 @@ public class SomeExternalService {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/scope/JdbcConnection.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.scope;
+package com.yeahbutstill.spring.basics.springin5steps.scope;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -403,7 +401,7 @@ public class JdbcConnection {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/scope/PersonDAO.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.scope;
+package com.yeahbutstill.spring.basics.springin5steps.scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -429,13 +427,13 @@ public class PersonDAO {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsBasicApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.in28minutes.spring.basics.springin5steps.basic.BinarySearchImpl;
+import com.yeahbutstill.spring.basics.springin5steps.basic.BinarySearchImpl;
 
 @Configuration
 @ComponentScan
@@ -468,7 +466,7 @@ public class SpringIn5StepsBasicApplication {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsCdiApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -476,7 +474,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.in28minutes.spring.basics.springin5steps.cdi.SomeCdiBusiness;
+import com.yeahbutstill.spring.basics.springin5steps.cdi.SomeCdiBusiness;
 
 @Configuration
 @ComponentScan
@@ -500,7 +498,7 @@ public class SpringIn5StepsCdiApplication {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsComponentScanApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -508,10 +506,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.in28minutes.spring.basics.componentscan.ComponentDAO;
+import com.yeahbutstill.spring.basics.componentscan.ComponentDAO;
 
 @Configuration
-@ComponentScan("com.in28minutes.spring.basics.componentscan")
+@ComponentScan("com.yeahbutstill.spring.basics.componentscan")
 public class SpringIn5StepsComponentScanApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsComponentScanApplication.class);
@@ -533,14 +531,14 @@ public class SpringIn5StepsComponentScanApplication {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsPropertiesApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import com.in28minutes.spring.basics.springin5steps.properties.SomeExternalService;
+import com.yeahbutstill.spring.basics.springin5steps.properties.SomeExternalService;
 
 @Configuration
 @ComponentScan
@@ -565,7 +563,7 @@ public class SpringIn5StepsPropertiesApplication {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsScopeApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -573,7 +571,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.in28minutes.spring.basics.springin5steps.scope.PersonDAO;
+import com.yeahbutstill.spring.basics.springin5steps.scope.PersonDAO;
 
 @Configuration
 @ComponentScan
@@ -606,13 +604,13 @@ public class SpringIn5StepsScopeApplication {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsXMLContextApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.in28minutes.spring.basics.springin5steps.xml.XmlPersonDAO;
+import com.yeahbutstill.spring.basics.springin5steps.xml.XmlPersonDAO;
 
 public class SpringIn5StepsXMLContextApplication {
 
@@ -639,7 +637,7 @@ public class SpringIn5StepsXMLContextApplication {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/xml/XmlJdbcConnection.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.xml;
+package com.yeahbutstill.spring.basics.springin5steps.xml;
 
 public class XmlJdbcConnection {
 	public XmlJdbcConnection() {
@@ -653,7 +651,7 @@ public class XmlJdbcConnection {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/xml/XmlPersonDAO.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps.xml;
+package com.yeahbutstill.spring.basics.springin5steps.xml;
 
 public class XmlPersonDAO {
 
@@ -699,13 +697,13 @@ external.service.url=http://someserver.dev.com/service
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<context:component-scan base-package="com.in28minutes.spring.basics"/>
+	<context:component-scan base-package="com.yeahbutstill.spring.basics"/>
 
     <bean id="xmlJdbcConnection" 
-    	class="com.in28minutes.spring.basics.springin5steps.xml.XmlJdbcConnection">
+    	class="com.yeahbutstill.spring.basics.springin5steps.xml.XmlJdbcConnection">
     </bean>
 
-    <bean id="xmlPersonDAO" class="com.in28minutes.spring.basics.springin5steps.xml.XmlPersonDAO">
+    <bean id="xmlPersonDAO" class="com.yeahbutstill.spring.basics.springin5steps.xml.XmlPersonDAO">
     		<property name="xmlJdbcConnection" ref="xmlJdbcConnection"/>
     </bean>
 
@@ -739,7 +737,7 @@ Finished creating instance of bean 'binarySearchImpl'
 ### /src/test/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsBasicApplicationTests.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

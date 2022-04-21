@@ -2,8 +2,8 @@ http://localhost:8080/spring-mvc/login
 
 spring-mvc
 
-Dispatcher Servlet
+DispatcherServlet -> Front Controller
 
-/login -> Login Controller
+/login -> Login Controller (Handler)
 
 Hello World

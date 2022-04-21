@@ -8,7 +8,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.in28minutes.spring.basics</groupId>
+    <groupId>com.yeahbutstill.spring.basics</groupId>
     <artifactId>spring-in-5-steps</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -98,7 +98,7 @@
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/BinarySearchImpl.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -125,7 +125,7 @@ public class BinarySearchImpl {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/BubbleSortAlgorithm.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.springframework.stereotype.Component;
 
@@ -143,7 +143,7 @@ public class BubbleSortAlgorithm implements SortAlgorithm {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/QuickSortAlgorithm.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.springframework.stereotype.Component;
 
@@ -161,7 +161,7 @@ public class QuickSortAlgorithm implements SortAlgorithm {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SortAlgorithm.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 public interface SortAlgorithm {
     public int[] sort(int[] numbers);
@@ -173,7 +173,7 @@ public interface SortAlgorithm {
 ### /src/main/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsApplication.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -183,7 +183,7 @@ import org.springframework.context.ApplicationContext;
 public class SpringIn5StepsApplication {
 
     // What are the beans?
-    // What are the dependencies of a bean?
+    // What are the dependencies of a entity?
     // Where to search for beans? => No need
 
     public static void main(String[] args) {
@@ -237,7 +237,7 @@ Finished creating instance of bean 'binarySearchImpl'
 ### /src/test/java/com/in28minutes/spring/basics/springin5steps/SpringIn5StepsApplicationTests.java
 
 ```java
-package com.in28minutes.spring.basics.springin5steps;
+package com.yeahbutstill.spring.basics.springin5steps;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

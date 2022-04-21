@@ -10,7 +10,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.in28minutes.spring.aop</groupId>
+	<groupId>com.yeahbutstill.spring.aop</groupId>
 	<artifactId>spring-aop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -99,7 +99,7 @@
 ### /src/main/java/com/in28minutes/spring/aop/springaop/aspect/UseAccessAspect.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.aspect;
+package com.yeahbutstill.spring.aop.springaop.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -119,7 +119,7 @@ public class UseAccessAspect {
 	//What kind of method calls I would intercept
 	//execution(* PACKAGE.*.*(..))
 	
-	@Before("execution(* com.in28minutes.spring.aop.springaop.business.*.*(..))")
+	@Before("execution(* com.yeahbutstilll.spring.aop.springaop.business.*.*(..))")
 	public void before(JoinPoint joinPoint){
 		logger.info(" Check for user access ");
 		logger.info(" Allowed execution for {}", joinPoint);
@@ -131,12 +131,12 @@ public class UseAccessAspect {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/business/Business1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.business;
+package com.yeahbutstill.spring.aop.springaop.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.spring.aop.springaop.data.Dao1;
+import com.yeahbutstill.spring.aop.springaop.data.Dao1;
 
 @Service
 public class Business1 {
@@ -155,12 +155,12 @@ public class Business1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/business/Business2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.business;
+package com.yeahbutstill.spring.aop.springaop.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.spring.aop.springaop.data.Dao2;
+import com.yeahbutstill.spring.aop.springaop.data.Dao2;
 
 @Service
 public class Business2 {
@@ -179,7 +179,7 @@ public class Business2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/data/Dao1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.data;
+package com.yeahbutstill.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
@@ -197,7 +197,7 @@ public class Dao1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/data/Dao2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop.data;
+package com.yeahbutstill.spring.aop.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
@@ -215,7 +215,7 @@ public class Dao2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/SpringAopApplication.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -224,8 +224,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.in28minutes.spring.aop.springaop.business.Business1;
-import com.in28minutes.spring.aop.springaop.business.Business2;
+import com.yeahbutstill.spring.aop.springaop.business.Business1;
+import com.yeahbutstill.spring.aop.springaop.business.Business2;
 
 @SpringBootApplication
 public class SpringAopApplication implements CommandLineRunner{
@@ -260,7 +260,7 @@ public class SpringAopApplication implements CommandLineRunner{
 ### /src/test/java/com/in28minutes/spring/aop/springaop/SpringAopApplicationTests.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

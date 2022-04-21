@@ -10,7 +10,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.in28minutes.spring.aop</groupId>
+	<groupId>com.yeahbutstill.spring.aop</groupId>
 	<artifactId>spring-aop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -99,7 +99,7 @@
 ### /src/main/java/com/in28minutes/spring/aop/springaop/Business1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -121,7 +121,7 @@ public class Business1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/Business2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -143,7 +143,7 @@ public class Business2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/Dao1.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.springframework.stereotype.Repository;
 
@@ -161,7 +161,7 @@ public class Dao1 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/Dao2.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.springframework.stereotype.Repository;
 
@@ -179,7 +179,7 @@ public class Dao2 {
 ### /src/main/java/com/in28minutes/spring/aop/springaop/SpringAopApplication.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -203,7 +203,7 @@ public class SpringAopApplication {
 ### /src/test/java/com/in28minutes/spring/aop/springaop/SpringAopApplicationTests.java
 
 ```java
-package com.in28minutes.spring.aop.springaop;
+package com.yeahbutstill.spring.aop.springaop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
